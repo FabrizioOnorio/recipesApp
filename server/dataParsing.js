@@ -9,6 +9,8 @@ const recipesParser = recipe => {
   const recipeCuisineType = recipe.recipe.cuisineType[0];
   const recipeMealType = recipe.recipe.mealType[0];
   const recipedishType = recipe.recipe.dishType[0];
+  const expanded = false;
+  const favorite = false;
   const recipeDataObj = {
     recipeId,
     recipeName,
@@ -19,7 +21,9 @@ const recipesParser = recipe => {
     recipeCalories,
     recipeCuisineType,
     recipeMealType,
-    recipedishType
+    recipedishType,
+    expanded,
+    favorite
   };
 
   return recipeDataObj;

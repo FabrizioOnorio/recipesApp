@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+ /* my code starts below */
+
+.recipes__card--expanded {
+ display: block;
+}
+
+.recipes__card--hidden {
+ display: none;
+}
+
+.recipe__button--show {
+  display: block;
+}
+
+.recipe__button--hidden {
+  display: none;
+}

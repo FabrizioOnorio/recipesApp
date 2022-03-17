@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import IngredientsList from '../IngredientsList/IngredientsList'
 import RecipesInterface from '../Recipe/Recipe'
+import { useNavigate } from 'react-router-dom';
 
-interface propsInterface {
+export interface propsInterface {
   setRecipes: React.Dispatch<React.SetStateAction<typeof RecipesInterface[]>>;
 }
 
@@ -23,6 +24,13 @@ const Form = ({ setRecipes }: propsInterface) => {
       .then(response => response.json())
       .then(response => setRecipes(response))
     setIngredients([]);
+    routeChange();
+  }
+
+  let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    let path = `/search`; 
+    navigate(path);
   }
 
   return (
