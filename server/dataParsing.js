@@ -5,7 +5,7 @@ const recipesParser = recipe => {
   const recipeSource = recipe.recipe.source;
   const recipeUrl = recipe.recipe.url;
   const recipeIngredientsArray = recipe.recipe.ingredientLines;
-  const recipeCalories = recipe.recipe.calories.toString().split('.')[0];
+  const recipeCalories = Math.trunc(recipe.recipe.calories);
   const recipeCuisineType = recipe.recipe.cuisineType[0];
   const recipeMealType = recipe.recipe.mealType[0];
   const recipedishType = recipe.recipe.dishType[0];
@@ -24,6 +24,7 @@ const recipesParser = recipe => {
 
   return recipeDataObj;
 }
+//  const recipeCalories = recipe.recipe.calories.toString().split('.')[0];
 
 const dataToArray = data => {
   const recipesArray = data.hits;

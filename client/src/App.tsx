@@ -1,25 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Form from './components/Form/Form'
+import List from './components/List/List'
+import RecipesInterface from './components/Recipe/Recipe'
 
-function App() {
+const App = () => {
+  const [recipes, setRecipes] = useState<typeof RecipesInterface[]>([]);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form setRecipes={setRecipes} />
+      <List recipes={recipes}/>
     </div>
   );
 }
