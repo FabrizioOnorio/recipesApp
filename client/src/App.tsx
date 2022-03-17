@@ -22,8 +22,7 @@ const App = () => {
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(myFavorites));
   }, [myFavorites]);
-console.log(myFavorites)
-console.log(recipes, 'recipes')
+
   return (
     <div className="App">
       <BrowserRouter>
