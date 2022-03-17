@@ -28,7 +28,6 @@ const recipesParser = recipe => {
 
   return recipeDataObj;
 }
-//  const recipeCalories = recipe.recipe.calories.toString().split('.')[0];
 
 const dataToArray = data => {
   const recipesArray = data.hits;

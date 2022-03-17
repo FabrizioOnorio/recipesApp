@@ -8,12 +8,12 @@ const Home = ({setRecipes}: any) => {
   return (
     <>
       <nav>
-        <Link to="/">Home</Link>
+        <Link className="nav__link" to="/">Home</Link>
         <Link to="/search">Search</Link>
         <Link to="/favorites">Favorites</Link>
         <Link to="/about">About</Link>
       </nav>
-      <h2>Welcome to the Home page</h2>
+      <h1>Google Recipes</h1>
       <Form setRecipes={setRecipes} />
     </>
   );

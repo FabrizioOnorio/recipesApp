@@ -64,9 +64,9 @@ const Recipe = ({ recipe, index, recipes, setRecipes, setMyFavorites }: any) => 
   }
 
   return (
-    <article onClick={() => handleToggle(index)}>
+    <article className="recipe__card" onClick={() => handleToggle(index)}>
       <section>
-        <img src={recipe.recipeImg} />
+        <img src={recipe.recipeImg} className="recipe__card--img" />
         <h3>{recipe.recipeName}</h3>
         <p>Cuisine: {recipe.recipeCuisineType}</p>
         <p>Meal Type: {recipe.recipeMealType}</p>

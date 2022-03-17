@@ -34,17 +34,16 @@ const Form = ({ setRecipes }: propsInterface) => {
   }
 
   return (
-    <section>
+    <section className="form--ingredients">
+      <IngredientsList ingredients={ingredients} />
       <section className="form-container">
         <form onSubmit={handleSubmit} className="form">
           <input onChange={e => setIngredient(e.target.value)} value={ingredient} className="form__input" type="text" name="ingredients" placeholder="What do you want to eat tonight?" required/>
-          <button className="form__button--add" type="submit" >➕</button>
         </form>
-        <form onSubmit={handleFinalSubmit}>
+        <form className="form_final" onSubmit={handleFinalSubmit}>
           <button className="form__button--submit" type="submit" >Get me some recipes</button>
         </form>
       </section>
-      <IngredientsList ingredients={ingredients} />
     </section>
   );
 }
