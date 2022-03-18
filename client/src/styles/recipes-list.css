@@ -1,4 +1,7 @@
 .recipes__list {
-  margin: 3rem;
-  align-content: center;
+  margin: 2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 75%;
+  gap: 2rem;
 }

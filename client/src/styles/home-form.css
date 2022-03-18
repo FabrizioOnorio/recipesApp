@@ -1,7 +1,7 @@
 form {
   text-align: right;
   margin-right: 5rem;
-  border-radius: 0.8rem;
+  border-radius: 0.2rem;
   padding: 0.6rem;
 }
 
@@ -10,7 +10,8 @@ form input {
   min-width: 300px;
   margin: 0.3rem;
   padding: 1rem 2rem;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
+  color: #3B0508;
 }
 
 form button {
@@ -18,10 +19,11 @@ form button {
   border: 1px solid #eee;
   padding: 1rem 1.6rem;
   align-self: flex-start;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   background-color: rgb(248,173,6);
   position: relative;
   top: 1rem;
+  color: #3B0508;
 }
 
 

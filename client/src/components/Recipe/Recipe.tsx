@@ -67,23 +67,29 @@ const Recipe = ({ recipe, index, recipes, setRecipes, setMyFavorites }: any) => 
     <article className="recipe__card" onClick={() => handleToggle(index)}>
       <section>
         <img src={recipe.recipeImg} className="recipe__card--img" />
-        <h3>{recipe.recipeName}</h3>
-        <p>Cuisine: {recipe.recipeCuisineType}</p>
-        <p>Meal Type: {recipe.recipeMealType}</p>
-        <p>Dish Type: {recipe.recipedishType}</p>
+        <section className="recipe__card--visible">
+          <h3>{recipe.recipeName}</h3>
+          <section className="recipe__card--infos">
+            <p>{recipe.recipeCuisineType} cuisine</p>
+            <p>{recipe.recipedishType}</p>
+          </section>
+        </section>
       </section>
       <section className={recipe.expanded === true ? "recipes__card--expanded" : "recipes__card--hidden"}>
-        <button className={recipe.favorite === true ? "recipe__button--hidden" : "recipe__button--show"} onClick={addToFavoritesCallback}>Add to favorites</button>
-        <p>Calories: {recipe.recipeCalories}</p>
+        <a className={recipe.favorite === true ? "recipe__button--hidden" : "recipe__button--show"} onClick={addToFavoritesCallback}>Add to favorites</a>
+        <svg width="160" height="3" viewBox="0 0 239 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0.00420153" y1="0.500018" x2="200.004" y2="0.500018" stroke="#3B0508"/>
+        </svg>
         <p>Ingredients: </p>
         <ul>
         {recipe.recipeIngredientsArray.map((ingredient: string, index: number) => (
-          <li key={index}>{ingredient}</li>
+          <li key={index}>- {ingredient}</li>
         ))}
         </ul>
-        <p>Source: {recipe.recipeSource}</p>
-        <a href={recipe.recipeUrl} target="_blank">get more infos</a>
-        <button className={recipe.favorite === true ? "recipe__button--show" : "recipe__button--hidden"} onClick={deleteFavoriteCallback}>Delete from favorites</button>
+        <section className="recipe__card--links">
+          <a href={recipe.recipeUrl} target="_blank">{recipe.recipeSource}</a>
+          <a className={recipe.favorite === true ? "recipe__button--show" : "recipe__button--hidden"} onClick={deleteFavoriteCallback}>Remove</a>
+        </section>
       </section>
     </article>
 

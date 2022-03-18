@@ -31,19 +31,3 @@ h1 {
   margin-bottom: -6rem;
   font-size: 10rem;
 }
-
-.recipes__card--expanded {
- display: block;
-}
-
-.recipes__card--hidden {
- display: none;
-}
-
-.recipe__button--show {
-  display: block;
-}
-
-.recipe__button--hidden {
-  display: none;
-}
