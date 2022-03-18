@@ -1,0 +1,16 @@
+.favorites__header {
+  margin-top: 6rem;
+  text-align: right;
+  margin-right: 5rem;
+  font-family: 'Amatic SC', cursive;
+  color: #3B0508;
+  font-size: 2rem;
+}
+
+.favorites__header--hide {
+  display: none;
+}
+
+.favorites__header--show {
+  display: block;
+}

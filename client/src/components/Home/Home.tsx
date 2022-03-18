@@ -15,6 +15,9 @@ const Home = ({setRecipes}: any) => {
       </nav>
       <h1>Google Recipes</h1>
       <Form setRecipes={setRecipes} />
+      <footer>
+        <p>Made from Fabrizio Onorio for &lt;/salt&gt; Hackday</p>
+      </footer>
     </>
   );
 }

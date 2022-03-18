@@ -5,7 +5,7 @@ nav {
   align-items: center;
   background-color: #2C1A12;
   min-height: 3.5rem;
-  position: fixed; /* Set the navbar to fixed position */
+  position: fixed;
   top: 0;
   width: 100%;
 }

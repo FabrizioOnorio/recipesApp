@@ -1,8 +1,11 @@
 @import 'nav-bar.css';
+@import 'footer.css';
 @import 'home-form.css';
 @import 'ingredients-list.css';
 @import 'recipes-list.css';
 @import 'recipe-card.css';
+@import 'favorites.css';
+@import 'about.css';
 
 * {
   box-sizing: border-box;

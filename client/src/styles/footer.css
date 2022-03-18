@@ -1,0 +1,17 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  background-color: #2C1A12;
+  min-height: 2rem;
+  font-family: 'Amatic SC', cursive;
+  color: #E2E0E1;
+  font-size: 1rem;
+  font-weight: bold;
+  position:absolute;
+  bottom:0;
+  width:100%;
+  position: fixed;
+}
+

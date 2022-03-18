@@ -14,6 +14,9 @@ const Search = ({recipes, setRecipes, setMyFavorites}: any) => {
     </nav>
       <Form setRecipes={setRecipes} />
       <List recipes={recipes} setRecipes={setRecipes} setMyFavorites={setMyFavorites}/>
+      <footer>
+        <p>Made from Fabrizio Onorio for &lt;/salt&gt; Hackday</p>
+      </footer>
     </>
   );
 }
