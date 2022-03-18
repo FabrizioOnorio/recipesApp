@@ -1,9 +1,12 @@
 .recipes__card--expanded {
- width: 150px;
  padding: 1rem 0.5rem;
  margin-top: 0.5rem;
  display: block;
 }
+
+.recipes__card--expanded a  {
+  max-width: 135px;
+ }
 
 ul {
   list-style-type: none;
@@ -49,7 +52,8 @@ ul {
 }
 
 .recipe__card--links {
-  margin-top: 0.7rem;
+  margin-top: 1rem;
+  margin-bottom: -0.7rem;
   display: flex;
   justify-content: space-between;
 }

@@ -11,4 +11,9 @@
 
 .about__header h2 {
   margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.about__header p {
+  font-weight: bold;
 }
