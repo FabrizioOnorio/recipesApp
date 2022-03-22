@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import IngredientsList from '../IngredientsList/IngredientsList'
-import RecipesInterface from '../Recipe/Recipe'
+import { RecipeInterface } from '../Recipe/Recipe'
 import { useNavigate } from 'react-router-dom';
 
 export interface propsInterface {
-  setRecipes: React.Dispatch<React.SetStateAction<typeof RecipesInterface[]>>;
+  setRecipes: React.Dispatch<React.SetStateAction<RecipeInterface[]>>;
 }
 
 const Form = ({ setRecipes }: propsInterface) => {
@@ -14,6 +14,10 @@ const Form = ({ setRecipes }: propsInterface) => {
 
   const handleSubmit = (event: React.FormEvent): void => {
     event.preventDefault();
+    if (ingredient === 'pasta' || ingredient === 'Pasta') {
+      setIngredient('');
+      return alert('Pasta is too general for our api, try with spaghetti or an other type of pasta :)')
+    }
     setIngredients(previousState => [...previousState, ingredient]);
     setIngredient('');
   }

@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Form from './components/Form/Form'
 import Home from './components/Home/Home'
 import Search from './components/Search/Search'
 import Favorites from './components/Favorites/Favorites'
 import About from './components/About/About'
-import RecipesInterface from './components/Recipe/Recipe'
+import { RecipeInterface } from './components/Recipe/Recipe'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const App = () => {
-  const [recipes, setRecipes] = useState<typeof RecipesInterface[]>([]);
-  const [myFavorites, setMyFavorites] = useState<Object[]>(() => {
+  const [recipes, setRecipes] = useState<RecipeInterface[]>([]);
+  const [myFavorites, setMyFavorites] = useState<RecipeInterface[]>(() => {
     if (window.localStorage.favorites) {
       const saved: string = localStorage.getItem("favorites") || "";
       const initialValue = JSON.parse(saved);

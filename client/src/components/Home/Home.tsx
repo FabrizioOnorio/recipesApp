@@ -1,9 +1,13 @@
 
 import { Link } from 'react-router-dom'
 import Form from '../Form/Form'
-import propsInterface from '../Form/Form'
+import { RecipeInterface } from '../Recipe/Recipe'
 
-const Home = ({setRecipes}: any) => {
+export interface propsInterface {
+  setRecipes: React.Dispatch<React.SetStateAction<RecipeInterface[]>>
+}
+
+const Home = ({setRecipes}: propsInterface) => {
 
   return (
     <>

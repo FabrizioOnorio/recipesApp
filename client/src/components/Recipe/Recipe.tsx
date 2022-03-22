@@ -15,17 +15,20 @@ export interface RecipeInterface {
     favorite: boolean;
 }
 
-interface propsInterface {
-  recipe: any;
+interface recipePropsInterface {
+  recipe: RecipeInterface;
   index: number;
+  recipes: RecipeInterface[];
+  setRecipes: React.Dispatch<React.SetStateAction<RecipeInterface[]>>;
+  setMyFavorites: React.Dispatch<React.SetStateAction<RecipeInterface[]>>;
 }
 
-const Recipe = ({ recipe, index, recipes, setRecipes, setMyFavorites }: any) => {
+const Recipe = ({ recipe, index, recipes, setRecipes, setMyFavorites }: recipePropsInterface) => {
 
   const handleToggle = (index: number) => {
     const expanded: boolean = !recipe.expanded;
     if (recipe.favorite === true) {
-      setMyFavorites((previusState: any) => {
+      setMyFavorites(previusState => {
         const selectedToExpand = previusState[index];
         selectedToExpand.expanded = expanded;
         previusState.splice(index, 1, selectedToExpand);
@@ -33,7 +36,7 @@ const Recipe = ({ recipe, index, recipes, setRecipes, setMyFavorites }: any) => 
       });
       return;
     }
-    setRecipes((previusState: any) => {
+    setRecipes(previusState => {
       const selectedToExpand = previusState[index];
       selectedToExpand.expanded = expanded;
       previusState.splice(index, 1, selectedToExpand);
@@ -45,7 +48,7 @@ const Recipe = ({ recipe, index, recipes, setRecipes, setMyFavorites }: any) => 
     const favoritRecipe = recipes[index];
     favoritRecipe.expanded = false;
     favoritRecipe.favorite = !recipe.favorite;
-    setMyFavorites((previousState: RecipeInterface[]) => [favoritRecipe, ...previousState]);
+    setMyFavorites(previousState => [favoritRecipe, ...previousState]);
   }
 
   const addToFavoritesCallback = (event: React.FormEvent) => {
@@ -55,7 +58,7 @@ const Recipe = ({ recipe, index, recipes, setRecipes, setMyFavorites }: any) => 
   }
 
   const deleteFavorite = (index: number) => {
-    setMyFavorites((previousState: RecipeInterface[]) => previousState.filter(recipe => previousState.indexOf(recipe) !== index));
+    setMyFavorites(previousState => previousState.filter((recipe: RecipeInterface) => previousState.indexOf(recipe) !== index));
   }
   
   const deleteFavoriteCallback = (event: React.FormEvent) => {
@@ -66,7 +69,7 @@ const Recipe = ({ recipe, index, recipes, setRecipes, setMyFavorites }: any) => 
   return (
     <article className="recipe__card" onClick={() => handleToggle(index)}>
       <section>
-        <img src={recipe.recipeImg} className="recipe__card--img" />
+        <img src={recipe.recipeImg} className="recipe__card--img" alt={ 'image of ' + recipe.recipeName}  />
         <section className="recipe__card--visible">
           <h3>{recipe.recipeName}</h3>
           <section className="recipe__card--infos">

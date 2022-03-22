@@ -1,7 +1,15 @@
 import { Link } from 'react-router-dom';
 import Recipe from '../Recipe/Recipe';
+import { RecipeInterface } from '../Recipe/Recipe'
 
-const Favorites = ({ myFavorites, setMyFavorites, recipes, setRecipes }: any ) => {
+interface favoriteProps {
+  myFavorites: RecipeInterface[];
+  recipes: RecipeInterface[];
+  setRecipes: React.Dispatch<React.SetStateAction<RecipeInterface[]>>;
+  setMyFavorites: React.Dispatch<React.SetStateAction<RecipeInterface[]>>;
+}
+
+const Favorites = ({ myFavorites, setMyFavorites, recipes, setRecipes }: favoriteProps ) => {
 
   return (
     <>
@@ -16,7 +24,7 @@ const Favorites = ({ myFavorites, setMyFavorites, recipes, setRecipes }: any ) =
         <h3 className={myFavorites.length > 0 ? 'favorites__header--hide' : 'favorites__header--show'}>- You don't have any saved recipe yet -</h3>
       </section>
       <section className="recipes__list">
-      {myFavorites.map((recipe: any, index: number) => (
+      {myFavorites.map((recipe: RecipeInterface, index: number) => (
         <Recipe setRecipes={setRecipes} recipe={recipe} key={index} recipes={recipes} index={index} setMyFavorites={setMyFavorites}/>
       ))}
       </section>
