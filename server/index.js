@@ -4,12 +4,15 @@ const fetch = require('node-fetch');
 const cors = require('cors');
 const { query } = require('express');
 require('dotenv').config();
+const path = require('path');
 
 const app = express()
 
 const port = 3030
 
 app.use(cors())
+
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.listen(port, ()=> console.log(`Hey I'm here listening on ${port}!`))
 
@@ -22,6 +25,10 @@ app.get('/api/recipes', async (req, res) => {
     const parsedData = dataParsing.dataToArray(data);
     res.json(parsedData);
   } catch (error) {
-    res.json(error);
+    res.status(500).json({ message: error.message });
   }
+});
+
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });

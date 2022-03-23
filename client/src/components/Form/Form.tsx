@@ -7,6 +7,8 @@ export interface propsInterface {
   setRecipes: React.Dispatch<React.SetStateAction<RecipeInterface[]>>;
 }
 
+const address = process.env.NODE_ENV === 'development' ? 'http://localhost:3030' : ''
+
 const Form = ({ setRecipes }: propsInterface) => {
 
   const [ingredients, setIngredients] = useState<string[]>([]);
@@ -24,9 +26,12 @@ const Form = ({ setRecipes }: propsInterface) => {
 
   const handleFinalSubmit = (event: React.FormEvent): void => {
     event.preventDefault();
-    fetch(`http://localhost:3030/api/recipes/?ingredients=${ingredients}`)
-      .then(response => response.json())
+    fetch(`${address}/api/recipes/?ingredients=${ingredients}`)
+    .then(response => response.json())
+    .then(response => {console.log(response) 
+      return response})
       .then(response => setRecipes(response))
+      .catch(error => console.log(error.message))
     setIngredients([]);
     routeChange();
   }

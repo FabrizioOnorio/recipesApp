@@ -18,4 +18,6 @@ RUN npm install
 
 COPY server/. .
 
+EXPOSE 3030
+
 CMD ["npm", "start"]
