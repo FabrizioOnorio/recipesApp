@@ -8,7 +8,7 @@ const path = require('path');
 
 const app = express()
 
-const port = 3030
+const port = process.env.PORT || 3030
 
 app.use(cors())
 
