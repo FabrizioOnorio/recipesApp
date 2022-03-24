@@ -19,8 +19,10 @@ const Search = ({recipes, setRecipes, setMyFavorites}: propsInterface) => {
       <Link to="/favorites">Favorites</Link>
       <Link to="/about">About</Link>
     </nav>
+    <section className="searchPage__form">
       <Form setRecipes={setRecipes} />
       <List recipes={recipes} setRecipes={setRecipes} setMyFavorites={setMyFavorites}/>
+    </section>
       <footer>
         <p>Made from Fabrizio Onorio for &lt;/salt&gt; Hackday</p>
       </footer>

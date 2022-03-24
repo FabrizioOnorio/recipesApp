@@ -16,4 +16,19 @@
 
 .about__header p {
   font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .App {
+    text-align: center;
+    align-items: center;
+  }
+
+  .about__header {
+    background-color: rgba(255, 255, 255, 0.596);
+    margin: 5rem 1rem;
+    padding: 1rem;
+    text-align: center;
+  }
 }

@@ -5,3 +5,9 @@
   max-width: 75%;
   gap: 2rem;
 }
+
+@media only screen and (max-width: 768px) {
+  .searchPage__form {
+    margin-top: 10rem;
+  }
+}

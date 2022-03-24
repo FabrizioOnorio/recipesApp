@@ -14,3 +14,15 @@
 .favorites__header--show {
   display: block;
 }
+
+
+@media only screen and (max-width: 768px) {
+ 
+
+  .favorites__header {
+    background-color: rgba(255, 255, 255, 0.596);
+    margin: 5rem 1rem;
+    padding: 1rem;
+    text-align: center;
+  }
+}

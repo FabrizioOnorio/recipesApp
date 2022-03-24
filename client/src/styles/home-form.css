@@ -8,7 +8,6 @@ form {
 form input {
   border: 1px solid #eee;
   min-width: 300px;
-  margin: 0.3rem;
   padding: 1rem 2rem;
   border-radius: 0.2rem;
   color: #3B0508;
@@ -34,6 +33,23 @@ form button:hover {
   border: 1px solid #3b050889;
   background-color: rgba(248, 171, 6, 0.541);
   color: #3b05087c;
+}
+
+.form--ingredients {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 768px) {
+ 
+  form {
+    margin: -5rem 1rem 0 1rem;
+    text-align: center;
+  }
+
+  form button {
+    margin-top: 4rem;
+  }
 }
 
 
