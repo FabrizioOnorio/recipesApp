@@ -52,5 +52,19 @@ form button:hover {
   }
 }
 
+@media only screen and (-webkit-min-device-pixel-ratio:0) {
+  select,
+  input {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  select,
+  input {
+    font-size: 16px;
+  }
+}
+
 
 
