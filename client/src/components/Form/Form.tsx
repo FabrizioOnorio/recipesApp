@@ -5,11 +5,12 @@ import { useNavigate } from 'react-router-dom';
 
 export interface propsInterface {
   setRecipes: React.Dispatch<React.SetStateAction<RecipeInterface[]>>;
+  setWaiting: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const address = process.env.NODE_ENV === 'development' ? 'http://localhost:3030' : ''
 
-const Form = ({ setRecipes }: propsInterface) => {
+const Form = ({ setRecipes, setWaiting }: propsInterface) => {
 
   const [ingredients, setIngredients] = useState<string[]>([]);
   const [ingredient, setIngredient] = useState<string>('');
@@ -26,11 +27,16 @@ const Form = ({ setRecipes }: propsInterface) => {
 
   const handleFinalSubmit = (event: React.FormEvent): void => {
     event.preventDefault();
+    setWaiting(true);
+    setRecipes([]);
     fetch(`${address}/api/recipes/?ingredients=${ingredients}`)
     .then(response => response.json())
     .then(response => {console.log(response) 
       return response})
-      .then(response => setRecipes(response))
+      .then(response => {
+        setRecipes(response)
+        setWaiting(false);
+      })
       .catch(error => console.log(error.message))
     setIngredients([]);
     routeChange();
