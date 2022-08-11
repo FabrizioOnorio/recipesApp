@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import Form from '../Form/Form';
 import List from '../List/List';
 import { RecipeInterface } from '../Recipe/Recipe';
-import { useState } from 'react';
 
 interface propsInterface {
   recipes: RecipeInterface[];
@@ -36,5 +35,3 @@ const Search = ({recipes, setRecipes, setMyFavorites, setWaiting, waiting}: prop
 }
 
 export default Search;
-
-
